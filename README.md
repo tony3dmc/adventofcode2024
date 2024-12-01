@@ -44,3 +44,9 @@ just test day01
 ```
 
 ## Solution commentary
+
+### Day 1: Historian Hysteria
+
+The usual easy warmup. I decided to gather all the numbers in the puzzle input into a single list, and then perform n/2 iterations, building up a set of lefts and rights, followed by a simple loop over the sorted values to sum the differences. PyLint forced me to learn the built-in `enumerate` function when I was doing some poor loops. I was also educated on the proper use of checking for keys in dictionaries, which is purely me being a bit rusty in this language. I was also told off for the odd trailing semicolon from the muscle memory of writing PHP.
+
+I will attempt to maintain and refactor the `utils.py` library of functions as we go, so previous puzzle solutions may be modified over time, as long as the tests pass. Good warmup, happy with my test rig and project layout this time.
