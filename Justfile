@@ -15,5 +15,5 @@ start day:
     @echo "Creating template files..."
     @touch inputs/{{day}}_example.txt
     @touch inputs/{{day}}_input.txt
-    @sed 's/AOCDAYNAME/{{day}}/g' src/.template.py > src/{{day}}.py
-    @sed 's/AOCDAYNAME/{{day}}/g' tests/.template.py > tests/test_{{day}}.py
+    @sed 's/AOCDAYNAME/{{day}}/g' src/solution.py.template > src/{{day}}.py
+    @sed 's/AOCDAYNAME/{{day}}/g' tests/test.py.template > tests/test_{{day}}.py
