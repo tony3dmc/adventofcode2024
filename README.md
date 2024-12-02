@@ -50,3 +50,11 @@ just test day01
 The usual easy warmup. I decided to gather all the numbers in the puzzle input into a single list, and then perform n/2 iterations, building up a set of lefts and rights, followed by a simple loop over the sorted values to sum the differences. PyLint forced me to learn the built-in `enumerate` function when I was doing some poor loops. I was also educated on the proper use of checking for keys in dictionaries, which is purely me being a bit rusty in this language. I was also told off for the odd trailing semicolon from the muscle memory of writing PHP.
 
 I will attempt to maintain and refactor the `utils.py` library of functions as we go, so previous puzzle solutions may be modified over time, as long as the tests pass. Good warmup, happy with my test rig and project layout this time.
+
+### Day 2: Red-Nosed Reports
+
+I tried too hard to create generic utils to help solve this one and ended up spending far too long on clever solutions. The twist in part 2 invalidated all my work as usual! My initial approach to the Problem Dampener concept was to write smarter algorithms to ignore anomalies, but I kept finding more corner cases where it wouldn't work. Eventually I resorted to a simpler approach by slicing out one level at at time and running them through the checks - inefficient, but ran out of time.
+
+The linter humbled me once more by pointing out several bad code smells. It occurred to me that I haven't been using lambda expressions in my code yet, which would likely simplify things more. I'll keep this in mind for tomorrow.
+
+I've only been writing tests for the overall solutions so far, but we need coverage over our utils as well, something else to do tomorrow.
