@@ -41,6 +41,7 @@ Or for a single day
 
 ```bash
 just test day01
+just test utils
 ```
 
 ## Solution commentary
@@ -55,6 +56,14 @@ I will attempt to maintain and refactor the `utils.py` library of functions as w
 
 I tried too hard to create generic utils to help solve this one and ended up spending far too long on clever solutions. The twist in part 2 invalidated all my work as usual! My initial approach to the Problem Dampener concept was to write smarter algorithms to ignore anomalies, but I kept finding more corner cases where it wouldn't work. Eventually I resorted to a simpler approach by slicing out one level at at time and running them through the checks - inefficient, but ran out of time.
 
-The linter humbled me once more by pointing out several bad code smells. It occurred to me that I haven't been using lambda expressions in my code yet, which would likely simplify things more. I'll keep this in mind for tomorrow.
+The linter humbled me once more by pointing out several bad code smells. It occurred to me that I haven't been using list comprehensions in my code yet, which would likely simplify things more. I'll keep this in mind for tomorrow.
 
 I've only been writing tests for the overall solutions so far, but we need coverage over our utils as well, something else to do tomorrow.
+
+### Day 3: Mull It Over
+
+I was half expecting the second part to be a problem that I would need to solve by running over the input data, setting a do/don't flag and parsing the mul operations manually, until I realised that I could just remove the inactive chunks of code from the puzzle input. First submission was a bit low, but I was quick to figure out there would be an unterminated don't section at the end to clean up.
+
+One more I am humbled by PyLint. My first use of list comprehension was to generate a list of the multiplications with `[x * y for x, y in matches]` and place that directly into the `sum()` function. However, there's no need to create it as a list to pass to `sum()` if I only plan on using it once, or dropping into one of the 'any', 'all', 'max', 'min' or 'sum' functions. It's cleaner syntax to supply a generator expression which will calculate the values on the fly instead of making and processing the list. Things like this are why learning the language is easier with a decent code smell tool.
+
+I wrote up some functions to cover the Utils library but they're pretty basic. I just wanted to have full coverage. Most puzzle-input-processing functions won't need too many bounds tests - the puzzle input won't be empty or adversarial.
