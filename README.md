@@ -67,3 +67,9 @@ I was half expecting the second part to be a problem that I would need to solve 
 One more I am humbled by PyLint. My first use of list comprehension was to generate a list of the multiplications with `[x * y for x, y in matches]` and place that directly into the `sum()` function. However, there's no need to create it as a list to pass to `sum()` if I only plan on using it once, or dropping into one of the 'any', 'all', 'max', 'min' or 'sum' functions. It's cleaner syntax to supply a generator expression which will calculate the values on the fly instead of making and processing the list. Things like this are why learning the language is easier with a decent code smell tool.
 
 I wrote up some functions to cover the Utils library but they're pretty basic. I just wanted to have full coverage. Most puzzle-input-processing functions won't need too many bounds tests - the puzzle input won't be empty or adversarial.
+
+### Day 4: Ceres Search
+
+I rewrote Part 1 a few times here, wanting to reduce the checks and complexities of word-searching in all eight directions. I decided to search the space for 'X' and then look around from there. Not too happy with the layout of my list comprehensions - this is where I'd normally drop it into AI and ask for help cleaning up.
+
+It feels good when you run the linter without problems, can't wait for that to happen... This time the aspect I learned was the syntax `foo in (a, b, c)` to help simplify multiple checks. I really like sets in Python.
